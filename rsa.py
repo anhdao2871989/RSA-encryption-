@@ -23,11 +23,11 @@ class RSAEncryptionTool:
         canvas = tk.Canvas(main_frame)
         canvas.pack(side="left", fill="both", expand=True)
 
-        scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
-        scrollbar.pack(side="right", fill="y")
+        # scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
+        # scrollbar.pack(side="right", fill="y")
 
-        canvas.configure(yscrollcommand=scrollbar.set)
-        canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        # canvas.configure(yscrollcommand=scrollbar.set)
+        # canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
 
         main_canvas = tk.Frame(canvas)
         canvas.create_window((0, 0), window=main_canvas, anchor="nw")
@@ -37,7 +37,7 @@ class RSAEncryptionTool:
         key_frame.pack(pady=10, padx=20, fill="x")
 
         generate_button_frame = ttk.Frame(key_frame)
-        generate_button_frame.pack(pady=10, anchor="center")  # Center the generate button frame
+        generate_button_frame.pack(side="left", padx=10)  # Center the generate button frame
 
         generate_button = ttk.Button(generate_button_frame, text="Generate Keys", command=self.generate_keys)
         generate_button.pack()
